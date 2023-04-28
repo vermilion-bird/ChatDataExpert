@@ -1,0 +1,9 @@
+flask-cors
+flask
+# gpt
+langchain
+openai
+tiktoken
+faiss-cpu
+chromadb
+tabulate
