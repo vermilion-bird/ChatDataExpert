@@ -1,5 +1,7 @@
 flask-cors
 flask
+openpyxl
+gunicorn
 # gpt
 langchain
 openai

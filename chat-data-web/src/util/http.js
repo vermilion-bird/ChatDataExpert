@@ -1,9 +1,10 @@
 // http.js
 import axios from 'axios';
+export const BASE_URL = 'https://bluevision.aib.lol/api/v1';
 
 const instance = axios.create({
-  baseURL: 'http://localhost:5000', // 配置基本URL，根据实际情况修改
-  timeout: 5000, // 设置请求超时时间
+  baseURL: BASE_URL, // 配置基本URL，根据实际情况修改
+  timeout: 600000, // 设置请求超时时间
 });
 
 // 请求拦截器
