@@ -2,6 +2,7 @@ flask-cors
 flask
 openpyxl
 gunicorn
+mysql-connector-python
 # gpt
 langchain
 openai

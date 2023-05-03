@@ -1,6 +1,8 @@
 // http.js
 import axios from 'axios';
+
 export const BASE_URL = 'https://bluevision.aib.lol/api/v1';
+// export const BASE_URL = 'http://139.185.43.100:5000/api/v1';
 
 const instance = axios.create({
   baseURL: BASE_URL, // 配置基本URL，根据实际情况修改

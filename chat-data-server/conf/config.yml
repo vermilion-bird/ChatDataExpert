@@ -1,0 +1,5 @@
+openai:
+  api_key:'sk-xxxxxx'
+
+database:
+  db_uri: 'mysql+mysqlconnector://user:password@172.17.0.4:3306/chat_data'
