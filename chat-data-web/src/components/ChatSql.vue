@@ -5,7 +5,7 @@
         <img :src="imgUrl" class="responsive"/>
         <el-divider content-position="left">【Prompt】FirstStep: Write down the analysis requirements</el-divider>
         <div>
-            <el-input v-model="prompt" autosize placeholder="Please describe your data analysis needs." @keyup.enter="getAnalysic" :disabled="input_status">
+            <el-input v-model="prompt" autosize placeholder="Please describe your data analysis needs." @keyup.enter="getSQLAnalysic" :disabled="input_status">
                 <template #append>
                     <el-button @click="getSQLAnalysic" :disabled="input_status">Execute</el-button>
                 </template>
