@@ -4,7 +4,7 @@
         <p>A simulated order table in the database.</p>
         <img :src="imgUrl" class="responsive"/>
         <el-divider content-position="left">【Prompt】FirstStep: Write down the analysis requirements</el-divider>
-        <div>
+        <div v-loading="loading">
             <el-input v-model="prompt" autosize placeholder="Please describe your data analysis needs." @keyup.enter="getSQLAnalysic" :disabled="input_status">
                 <template #append>
                     <el-button @click="getSQLAnalysic" :disabled="input_status">Execute</el-button>
@@ -32,12 +32,11 @@ export default {
     components: {},
     data() {
         return {
-            loading: 'false',
+            loading: false,
             prompt: '',
             db_uri: '',
             analysic_result: '',
             imgUrl:imgUrl,
-
         }
     },
     methods: {
