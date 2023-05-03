@@ -5,7 +5,6 @@
                 <chat-dataframe></chat-dataframe>
             </el-tab-pane>
             <el-tab-pane label="ChatSQL" name="tab2">
-                <img src=""/>
                 <chat-sql></chat-sql>
             </el-tab-pane>
             <!-- <el-tab-pane label="Conf" name="tab3">
