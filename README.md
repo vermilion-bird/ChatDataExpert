@@ -46,3 +46,9 @@ Step3 获取分析结果
 ![Screenshot from 2023-05-03 15-05-12.png](./doc/img/Screenshot_from_2023-05-03_15-05-12.png)
 
 ![Untitled](./doc/img/Untitled%206.png)
+
+## 微信
+![Untitled](https://raw.githubusercontent.com/caidong/Picture/main/Blog/Image/2022WeChate6f4653196256a3cadce10d9efc78d82.png)
+
+## 电报群
+https://t.me/+qhLlWApEPEw3OTg9
