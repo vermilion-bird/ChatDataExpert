@@ -1,5 +1,5 @@
 openai:
-  api_key:'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'
+  api_key:'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'
 
 database:
   db_uri: 'mysql+mysqlconnector://user:password@172.17.0.4:3306/chat_data'
