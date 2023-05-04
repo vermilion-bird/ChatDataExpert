@@ -46,9 +46,11 @@ export default {
         async getSQLAnalysic() {
             try {
                 this.loading = true
+                const openai_api_key = localStorage.getItem("openai_api_key");
                 var result = await post('/sql/analytics', {
                     "db_uri": this.db_uri,
-                    "prompt": this.prompt
+                    "prompt": this.prompt,
+                    "openai_api_key": openai_api_key || ""
                 });
                 if (result.code != 200) {
                     this.$message({

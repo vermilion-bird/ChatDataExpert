@@ -1,7 +1,7 @@
 from flask import Flask, request, Blueprint
 import os
 from flask_cors import CORS
-from chatgpt import file_agent,read_data,sql_agent
+from chatgpt import file_agent,read_data, sql_agent, api_key
 import io
 import contextlib
 app = Flask(__name__)
@@ -44,6 +44,9 @@ def analystic_file():
     if request.method == 'POST':
         try:
             file_name = request.json.get('file_name')
+            openai_api_key = request.json.get('openai_api_key')
+            if openai_api_key:
+                api_key(openai_api_key)
             if not file_name:
                 raise Exception('请上传文件')
             prompt = request.json.get('prompt')
@@ -61,12 +64,17 @@ def analystic_file():
             return {'code':'200', 'message': result, 'thought':output_str}
         except Exception as e:
             return {'code':'100', 'message': f'{str(e)}'}
+        finally:
+            api_key(OPENAI_KEY)
 
 @api_v1.route('/sql/analytics', methods=['POST'])
 def analystic_sql():
     if request.method == 'POST':
         try:
             db_uri = request.json.get('db_uri')
+            openai_api_key = request.json.get('openai_api_key')
+            if openai_api_key:
+                api_key(openai_api_key)
             if not db_uri:
                 db_uri = DB_URI
                 # raise Exception('请输入数据库连接')
@@ -85,6 +93,8 @@ def analystic_sql():
             return {'code':'200', 'message': result, 'thought':output_str}
         except Exception as e:
             return {'code':'100', 'message': f'{str(e)}'}
+        finally:
+            api_key(OPENAI_KEY)
 
 app.register_blueprint(api_v1)
 

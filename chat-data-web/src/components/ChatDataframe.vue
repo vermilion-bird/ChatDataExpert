@@ -26,7 +26,7 @@
                 </div>
                 <template #tip>
                     <div class="el-upload__tip">
-                        csv/xlsx files less than 100M
+                        csv/xlsx/json files less than 100M
                     </div>
                 </template>
             </el-upload>
@@ -116,10 +116,12 @@ export default {
         },
         async getAnalysic() {
             try {
+                const openai_api_key = localStorage.getItem("openai_api_key");
                 this.loading = true
                 var result = await post('/analytics', {
                     "file_name": this.file_name,
-                    "prompt": this.prompt
+                    "prompt": this.prompt,
+                    "openai_api_key": openai_api_key || "",
                 });
                 if (result.code != 200) {
                     this.$message({

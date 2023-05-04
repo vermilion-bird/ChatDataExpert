@@ -13,7 +13,13 @@ def read_data(file_path):
         df = pd.read_csv(file_path)
     elif file_path.endswith('.xlsx'):
         df = pd.read_excel(file_path)
+    elif file_path.endswith('.json'):
+        df = pd.read_json(file_path)
     return df
+import os
+
+def api_key(api_key):
+    os.environ["OPENAI_API_KEY"] = api_key
 
 def file_agent(file_path):
     df = read_data(file_path)
