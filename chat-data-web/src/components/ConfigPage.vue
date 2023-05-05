@@ -1,11 +1,13 @@
 <template>
 <div style="margin-bottom:10px">
-    <p>开发者api key 使用量超限, 请申请OpenAI KEY 
+    <p>如出现Api Key 相关错误, 请使用自己的OpenAI KEY 
         <br/>
-        <el-link href="https://www.notion.so/caidong/OpenAI-Key-711f2484037f4fcfa01b5cbb2cda5b91?pvs=4" type="warning">申请教程</el-link>
+        <el-link href="https://www.notion.so/caidong/OpenAI-Key-711f2484037f4fcfa01b5cbb2cda5b91?pvs=4" type="warning">【申请教程】</el-link>
         <span>&nbsp; &nbsp;</span>
-        <el-link href="https://platform.openai.com/account/usage" type="info">申请地址</el-link>
+        <el-link href="https://platform.openai.com/account/usage" type="info">【申请地址】</el-link>
+    
     </p>
+
     <div class="key_container">
         <div class="label">OpenAI Key: </div>
         <div class="input">
@@ -13,6 +15,7 @@
         </div>
     </div>
     <el-alert style="margin-top:10px" title="提示: 使用后,请及时在OpenAI 后台删除Key" type="error" />
+    <el-link href="https://support.qq.com/product/592599" type="success">【问题反馈】</el-link>
 </div>
 </template>
 

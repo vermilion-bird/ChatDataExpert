@@ -16,7 +16,7 @@
         </el-col>
 
         <el-col :span="18" :offset="2" v-else>
-            <el-divider content-position="left">【Data】FirstStep: Upload a data file in CSV or XLSX format</el-divider>
+            <el-divider content-position="left">【Data】FirstStep: Upload a data file in CSV or XLSX or JSON format</el-divider>
             <el-upload :on-success="handleSuccess" :on-error="handleError" class="" drag :action="upload_file_url">
                 <el-icon class="el-icon--upload">
                     <upload-filled />

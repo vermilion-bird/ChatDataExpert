@@ -3,6 +3,7 @@ flask
 openpyxl
 gunicorn
 mysql-connector-python
+xlrd
 # gpt
 langchain
 openai
