@@ -1,5 +1,6 @@
 openai:
-  api_key:'sk-xxxxxx'
-
+  api_key: 'sk-******'
+  model: 'gpt-3.5-turbo-0301'
+  
 database:
   db_uri: 'mysql+mysqlconnector://user:password@172.17.0.4:3306/chat_data'

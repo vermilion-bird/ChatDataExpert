@@ -29,4 +29,4 @@ server {
 
  pip install gunicorn
  - 设置超时时间为5分钟
- nohup gunicorn --timeout 300 -w 6 -b 172.17.0.1:8000 app:app >>./BVlog 2>&1 &
+ nohup gunicorn --timeout 300 -w 6 -b 172.17.0.1:8000 app:app >>./OSlog 2>&1 &
