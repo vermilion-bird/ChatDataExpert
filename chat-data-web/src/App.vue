@@ -7,9 +7,12 @@
         <el-tab-pane label="ChatSQL" name="tab2">
             <chat-sql></chat-sql>
         </el-tab-pane>
-        <el-tab-pane label="Conf" name="tab3">
-                <config-page></config-page>
-            </el-tab-pane>
+        <el-tab-pane label="ChatMatplot" name="tab3">
+            <chat-matplotlib></chat-matplotlib>
+        </el-tab-pane>
+        <el-tab-pane label="ChatDoc" name="tab4">
+            <chat-doc></chat-doc>
+        </el-tab-pane>
     </el-tabs>
 </div>
 </template>
@@ -17,14 +20,18 @@
 <script>
 import ChatDataframe from './components/ChatDataframe.vue'
 import ChatSql from './components/ChatSql.vue'
-import ConfigPage from './components/ConfigPage.vue'
+// import ConfigPage from './components/ConfigPage.vue'
+import ChatMatplotlib from './components/ChatMatplotlib.vue'
+import ChatDoc from './components/ChatDoc.vue'
 
 export default {
     name: "App",
     components: {
         ChatDataframe,
         ChatSql,
-        ConfigPage
+        ChatMatplotlib,
+        ChatDoc,
+        // ConfigPage
     },
     data() {
         return {
