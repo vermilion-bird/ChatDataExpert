@@ -4,3 +4,6 @@ venv
 __pycache__/
 nohup.out
 log
+*.yml
+*log
+web

@@ -26,5 +26,7 @@ server {
 
 
  # guicorn启动
+
  pip install gunicorn
- gunicorn -w 4 -b 172.17.0.1:5000 app:app
+ - 设置超时时间为5分钟
+ nohup gunicorn --timeout 300 -w 6 -b 172.17.0.1:8000 app:app >>./OSlog 2>&1 &

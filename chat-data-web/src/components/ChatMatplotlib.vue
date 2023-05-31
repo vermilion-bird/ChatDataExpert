@@ -44,10 +44,19 @@
             </div>
         </el-col>
     </el-row>
+
     <el-row :gutter="20" class="result-block">
         <el-col :span="18" :offset="2">
             <el-divider content-position="left">【Result】ThirdStep: Present the data results.</el-divider>
             <div v-html="analysic_result" class="result" style="background-color: #ffffff" />
+        </el-col>
+    </el-row>
+    <el-row :gutter="20" class="image-block">
+        <el-col :span="18" :offset="2">
+            <el-divider content-position="left">【Visualization】FourthStep: Display the generated plot</el-divider>
+            <div class="image-container">
+                <el-image class="responsive-image" :src="url" fit="fill" />
+            </div>
         </el-col>
     </el-row>
 </div>
@@ -65,11 +74,15 @@ import {
     ElButton,
     ElIcon
 } from 'element-plus';
+import imgUrl from '@/assets/Compressed_Analysis_Visualization.png';
 
 export default {
-    name: 'ChatDataframe',
+    name: 'ChatMatplotlib',
     data() {
         return {
+            url: imgUrl,
+            plot_path: '',
+            // BASE_URL + '/images/p1.png',
             input_status: true,
             loading: false,
             showTabel: false,
@@ -118,7 +131,7 @@ export default {
             try {
                 const openai_api_key = localStorage.getItem("openai_api_key");
                 this.loading = true
-                var result = await post('/analytics', {
+                var result = await post('/matplotlib/analytics', {
                     "file_name": this.file_name,
                     "prompt": this.prompt,
                     "openai_api_key": openai_api_key || "",
@@ -131,7 +144,7 @@ export default {
                     });
                 }
                 this.analysic_result = result.thought
-
+                this.url = `${BASE_URL}/images/${result.plot_path}`
             } catch (error) {
                 this.$message({
                     message: '数据分析失败，' + error.message,
@@ -150,6 +163,16 @@ export default {
 </script>
 
 <style>
+/* 使图片具有响应式布局 */
+.responsive {
+    max-width: 100%;
+    /* 限制图片的最大宽度为其父容器的宽度 */
+    height: auto;
+    /* 保持图片的纵横比 */
+    display: block;
+    /* 让图片成为块级元素以消除下方的空白间距 */
+}
+
 .wrapper {
     display: flex;
     /* 设置为弹性盒子布局 */
@@ -183,8 +206,6 @@ export default {
     white-space: pre-wrap;
 }
 
-
-
 .result {
     white-space: pre-wrap;
     width: 100%;
@@ -213,4 +234,27 @@ export default {
 .result-block {
     margin-top: 20px;
 }
+
+/* ... */
+.image-block {
+    margin-top: 20px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f7fa;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+}
+
+.responsive-image {
+    max-width: 50%;
+    height: auto;
+    display: block;
+}
+
+/* ... */
 </style>

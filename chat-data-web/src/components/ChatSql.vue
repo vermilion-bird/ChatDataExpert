@@ -3,6 +3,9 @@
     <el-col :span="18" :offset="2">
         <p>A simulated order table in the database.</p>
         <img :src="imgUrl" class="responsive"/>
+        <p style="margin-top: 20px">If you want to connect to your own database, please ensure that the database is available and can be accessed remotely, Please enter the database connection address.</p>
+        <p>You can use the test database provided above; please leave the following input box empty.        </p>
+        <el-input  v-model="db_uri" placeholder="example  mysql+mysqlconnector://user:password@172.17.0.4:3306/database" />
         <el-divider content-position="left">【Prompt】FirstStep: Write down the analysis requirements</el-divider>
         <div v-loading="loading">
             <el-input v-model="prompt" autosize placeholder="Please describe your data analysis needs." @keyup.enter="getSQLAnalysic" :disabled="input_status">
@@ -43,9 +46,11 @@ export default {
         async getSQLAnalysic() {
             try {
                 this.loading = true
+                const openai_api_key = localStorage.getItem("openai_api_key");
                 var result = await post('/sql/analytics', {
                     "db_uri": this.db_uri,
-                    "prompt": this.prompt
+                    "prompt": this.prompt,
+                    "openai_api_key": openai_api_key || ""
                 });
                 if (result.code != 200) {
                     this.$message({
