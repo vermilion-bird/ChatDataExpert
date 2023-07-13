@@ -48,7 +48,7 @@ Step3 获取分析结果
 ![Untitled](./doc/img/Untitled%206.png)
 
 ## 微信
-![Untitled](https://raw.githubusercontent.com/caidong/Picture/main/Blog/Image/2022WeChate6f4653196256a3cadce10d9efc78d82.png)
+<img src="https://raw.githubusercontent.com/caidong/Picture/main/Blog/Image/2022WeChate6f4653196256a3cadce10d9efc78d82.png" width="300" height="300" alt="weixin">
 
 ## 电报群
 https://t.me/+qhLlWApEPEw3OTg9
